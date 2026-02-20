@@ -35,6 +35,12 @@ services:
       AI__AnthropicApiKey: ${ANTHROPIC_API_KEY:-}
       Telegram__BotToken: ${TELEGRAM_BOT_TOKEN:-}
       Telegram__ChatId: ${TELEGRAM_CHAT_ID:-}
+      Stripe__SecretKey: ${STRIPE_SECRET_KEY:-}
+      Stripe__WebhookSecret: ${STRIPE_WEBHOOK_SECRET:-}
+      Stripe__ProPriceId: ${STRIPE_PRO_PRICE_ID:-}
+      Stripe__PremiumPriceId: ${STRIPE_PREMIUM_PRICE_ID:-}
+      Stripe__SuccessUrl: "http://localhost:3000/pricing"
+      Stripe__CancelUrl: "http://localhost:3000/pricing"
       Cors__AllowedOrigins__0: "http://localhost:3000"
     depends_on:
       postgres:
@@ -48,7 +54,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      NEXT_PUBLIC_API_URL: "http://localhost:8080"
+      NEXT_PUBLIC_API_BASE_URL: "http://localhost:8080"
     depends_on:
       - backend
 

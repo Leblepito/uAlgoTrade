@@ -62,7 +62,7 @@ U2ALGO_TELEGRAM_CHAT_ID=<optional>
 
 **Frontend:**
 ```
-NEXT_PUBLIC_API_URL=https://api.ualgotrade.com
+NEXT_PUBLIC_API_BASE_URL=https://api.ualgotrade.com
 ```
 
 ## Local Development

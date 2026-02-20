@@ -20,7 +20,7 @@ export type MeResult = {
 const ACCESS_TOKEN_KEY = "fp_access_token";
 
 function apiBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 }
 
 export function getAccessToken(): string | null {

@@ -50,9 +50,9 @@ public sealed class AccountController : ControllerBase
         if (string.IsNullOrWhiteSpace(request?.Language))
             return BadRequest(new { error = "Language is required." });
 
-        var validLangs = new[] { "en", "tr", "th", "ru", "zh", "es" };
+        var validLangs = new[] { "en", "tr", "th", "ar", "ru", "zh" };
         if (!validLangs.Contains(request.Language.ToLowerInvariant()))
-            return BadRequest(new { error = "Invalid language code. Supported: en, tr, th, ru, zh, es." });
+            return BadRequest(new { error = "Invalid language code. Supported: en, tr, th, ar, ru, zh." });
 
         var userId = AuthService.GetUserId(User);
         await _repo.UpdatePreferredLanguageAsync(userId, request.Language.ToLowerInvariant(), ct);

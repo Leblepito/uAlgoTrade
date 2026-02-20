@@ -67,7 +67,7 @@ export default function IndicatorsClient({ children }: { children?: React.ReactN
 
   useEffect(() => {
     let cancelled = false;
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 
     const fetchPrice = async () => {
       try {

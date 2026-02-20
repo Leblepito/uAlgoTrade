@@ -217,7 +217,7 @@ public sealed class PostgresAuthRepository
     public async Task<Guid> CreateUserAsync(string email, string passwordHash, string? displayName, CancellationToken ct, string preferredLanguage = "en")
     {
         // Validate language code
-        var validLangs = new[] { "en", "tr", "th", "ru", "zh", "es" };
+        var validLangs = new[] { "en", "tr", "th", "ar", "ru", "zh" };
         var lang = validLangs.Contains(preferredLanguage) ? preferredLanguage : "en";
 
         const string sql = """
@@ -240,7 +240,7 @@ public sealed class PostgresAuthRepository
 
     public async Task UpdatePreferredLanguageAsync(Guid userId, string language, CancellationToken ct)
     {
-        var validLangs = new[] { "en", "tr", "th", "ru", "zh", "es" };
+        var validLangs = new[] { "en", "tr", "th", "ar", "ru", "zh" };
         var lang = validLangs.Contains(language) ? language : "en";
 
         const string sql = """
@@ -484,6 +484,107 @@ public sealed class PostgresAuthRepository
                            UPDATE user_session
                            SET revoked_at = now()
                            WHERE user_id = @userId AND revoked_at IS NULL;
+                           """;
+
+        await using var conn = new NpgsqlConnection(_connectionString);
+        await conn.OpenAsync(ct);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("userId", userId);
+        await cmd.ExecuteNonQueryAsync(ct);
+    }
+
+    // ─── Stripe subscription helpers ───────────────────────────────────
+
+    public async Task<string?> GetStripeCustomerIdAsync(Guid userId, CancellationToken ct)
+    {
+        const string sql = """
+                           SELECT provider_customer_id
+                           FROM user_subscription
+                           WHERE user_id = @userId AND provider = 'stripe'
+                           ORDER BY created_at DESC
+                           LIMIT 1;
+                           """;
+
+        await using var conn = new NpgsqlConnection(_connectionString);
+        await conn.OpenAsync(ct);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("userId", userId);
+        var result = await cmd.ExecuteScalarAsync(ct);
+        return result as string;
+    }
+
+    public async Task<Guid> FindUserIdByStripeCustomerIdAsync(string stripeCustomerId, CancellationToken ct)
+    {
+        const string sql = """
+                           SELECT user_id
+                           FROM user_subscription
+                           WHERE provider_customer_id = @cid AND provider = 'stripe'
+                           ORDER BY created_at DESC
+                           LIMIT 1;
+                           """;
+
+        await using var conn = new NpgsqlConnection(_connectionString);
+        await conn.OpenAsync(ct);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("cid", stripeCustomerId);
+        var result = await cmd.ExecuteScalarAsync(ct);
+        return result is Guid id ? id : Guid.Empty;
+    }
+
+    public async Task UpsertSubscriptionAsync(
+        Guid userId,
+        string planCode,
+        string status,
+        string provider,
+        string providerCustomerId,
+        string providerSubscriptionId,
+        CancellationToken ct,
+        DateTime? periodStart = null,
+        DateTime? periodEnd = null,
+        DateTime? cancelAt = null)
+    {
+        const string sql = """
+                           INSERT INTO user_subscription
+                             (user_id, plan_code, status, provider, provider_customer_id, provider_subscription_id,
+                              current_period_start, current_period_end, cancel_at)
+                           VALUES
+                             (@userId, @planCode, @status, @provider, @custId, @subId,
+                              COALESCE(@periodStart, now()), @periodEnd, @cancelAt)
+                           ON CONFLICT (user_id) WHERE status IN ('active','trialing','past_due')
+                           DO UPDATE SET
+                             plan_code = EXCLUDED.plan_code,
+                             status = EXCLUDED.status,
+                             provider = EXCLUDED.provider,
+                             provider_customer_id = EXCLUDED.provider_customer_id,
+                             provider_subscription_id = EXCLUDED.provider_subscription_id,
+                             current_period_start = EXCLUDED.current_period_start,
+                             current_period_end = EXCLUDED.current_period_end,
+                             cancel_at = EXCLUDED.cancel_at,
+                             updated_at = now();
+                           """;
+
+        await using var conn = new NpgsqlConnection(_connectionString);
+        await conn.OpenAsync(ct);
+        await using var cmd = new NpgsqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("userId", userId);
+        cmd.Parameters.AddWithValue("planCode", planCode);
+        cmd.Parameters.AddWithValue("status", status);
+        cmd.Parameters.AddWithValue("provider", provider);
+        cmd.Parameters.AddWithValue("custId", providerCustomerId);
+        cmd.Parameters.AddWithValue("subId", providerSubscriptionId);
+        cmd.Parameters.AddWithValue("periodStart", (object?)periodStart ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("periodEnd", (object?)periodEnd ?? DBNull.Value);
+        cmd.Parameters.AddWithValue("cancelAt", (object?)cancelAt ?? DBNull.Value);
+        await cmd.ExecuteNonQueryAsync(ct);
+    }
+
+    public async Task CancelSubscriptionAsync(Guid userId, CancellationToken ct)
+    {
+        const string sql = """
+                           UPDATE user_subscription
+                           SET status = 'canceled', cancel_at = now(), updated_at = now()
+                           WHERE user_id = @userId
+                             AND status IN ('active', 'trialing', 'past_due');
                            """;
 
         await using var conn = new NpgsqlConnection(_connectionString);

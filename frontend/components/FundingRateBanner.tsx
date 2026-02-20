@@ -38,7 +38,7 @@ export function FundingRateBanner() {
     })();
 
     const fetchFunding = async () => {
-      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
       
       try {
         const res = await fetch(`${apiBaseUrl}/api/FundingRate/btc`, { 

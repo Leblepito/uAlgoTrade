@@ -52,7 +52,7 @@ npm run dev
 
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_API_URL` | Backend API URL (default: `http://localhost:8080`) |
+| `NEXT_PUBLIC_API_BASE_URL` | Backend API URL (default: `http://localhost:8080`) |
 
 ## Pages
 

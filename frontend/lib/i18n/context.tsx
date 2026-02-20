@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { LOCALES, DEFAULT_LOCALE, type Locale } from "./locales";
+import { LOCALES, DEFAULT_LOCALE, isRTL, type Locale } from "./locales";
 import { translations, t as translateFn } from "./translations";
 
 /* ------------------------------------------------------------------ */
@@ -52,9 +52,12 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
   const [mounted, setMounted] = useState(false);
 
-  // Hydrate from localStorage after mount
+  // Hydrate from localStorage after mount + set dir/lang on <html>
   useEffect(() => {
-    setLocaleState(loadStoredLocale());
+    const l = loadStoredLocale();
+    setLocaleState(l);
+    document.documentElement.lang = l;
+    document.documentElement.dir = isRTL(l) ? "rtl" : "ltr";
     setMounted(true);
   }, []);
 
@@ -64,6 +67,8 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
       setLocaleState(newLocale);
       if (typeof window !== "undefined") {
         localStorage.setItem(STORAGE_KEY, newLocale);
+        document.documentElement.lang = newLocale;
+        document.documentElement.dir = isRTL(newLocale) ? "rtl" : "ltr";
       }
       // Optionally sync with backend if user is authenticated
       syncLocaleWithBackend(newLocale).catch(() => {});
@@ -109,7 +114,7 @@ async function syncLocaleWithBackend(locale: Locale): Promise<void> {
   const token = localStorage.getItem("fp_access_token");
   if (!token) return;
 
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+  const base = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
   await fetch(`${base}/api/account/language`, {
     method: "PATCH",
     headers: {
