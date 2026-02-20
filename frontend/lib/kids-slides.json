@@ -1,0 +1,262 @@
+[
+  {
+    "id": 0,
+    "emoji": "🌍",
+    "title": {
+      "en": "Welcome to the Market Adventure!",
+      "tr": "Pazar Macerasına Hoş Geldiniz!",
+      "th": "ยินดีต้อนรับสู่การผจญภัยในตลาด!",
+      "ru": "Добро пожаловать в Рыночное Приключение!",
+      "zh": "欢迎来到市场冒险！",
+      "es": "¡Bienvenido a la Aventura del Mercado!"
+    },
+    "content": {
+      "en": "Imagine a giant playground where people swap toys, rice, and gold. This is the Market! Today, we will learn how to read the 'footprints' of the giants who play here.",
+      "tr": "İnsanların oyuncak, pirinç ve altın değiştirdiği dev bir oyun alanı hayal edin. Burası Pazar! Bugün burada oynayan devlerin 'ayak izlerini' okumayı öğreneceğiz.",
+      "th": "ลองจินตนาการถึงสนามเด็กเล่นขนาดยักษ์ที่ผู้คนแลกเปลี่ยนของเล่น ข้าว และทอง นี่คือตลาด! วันนี้เราจะเรียนรู้วิธีอ่าน 'รอยเท้า' ของยักษ์ที่เล่นที่นี่",
+      "ru": "Представьте огромную площадку, где люди меняют игрушки, рис и золото. Это Рынок! Сегодня мы научимся читать 'следы' гигантов, которые здесь играют.",
+      "zh": "想象一个巨大的游乐场，人们在这里交换玩具、大米和黄金。这就是市场！今天，我们将学习如何读懂在这里玩耍的巨人留下的"脚印"。",
+      "es": "Imagina un gran patio de juegos donde la gente intercambia juguetes, arroz y oro. ¡Este es el Mercado! Hoy aprenderemos a leer las 'huellas' de los gigantes que juegan aquí."
+    },
+    "visual_cue": "A colourful global marketplace with a friendly robot guide.",
+    "quiz": {
+      "question": { "en": "What do people do in a market?", "tr": "İnsanlar pazarda ne yapar?", "th": "คนทำอะไรในตลาด?", "ru": "Что люди делают на рынке?", "zh": "人们在市场上做什么？", "es": "¿Qué hacen las personas en el mercado?" },
+      "options": { "en": ["Buy and sell things", "Sleep all day", "Play basketball", "Paint pictures"], "tr": ["Alım satım yapar", "Tüm gün uyur", "Basketbol oynar", "Resim yapar"], "th": ["ซื้อขายสิ่งของ", "นอนทั้งวัน", "เล่นบาสเก็ตบอล", "วาดรูป"], "ru": ["Покупают и продают вещи", "Спят весь день", "Играют в баскетбол", "Рисуют картины"], "zh": ["买卖东西", "整天睡觉", "打篮球", "画画"], "es": ["Comprar y vender cosas", "Dormir todo el día", "Jugar baloncesto", "Pintar cuadros"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 1,
+    "emoji": "📊",
+    "title": {
+      "en": "Prices Go Up and Down",
+      "tr": "Fiyatlar Yükselir ve Düşer",
+      "th": "ราคาขึ้นและลง",
+      "ru": "Цены Растут и Падают",
+      "zh": "价格涨涨跌跌",
+      "es": "Los Precios Suben y Bajan"
+    },
+    "content": {
+      "en": "Think of mangoes. When everyone wants mangoes, the price goes UP 📈. When nobody wants them, the price goes DOWN 📉. We watch the price move like a dance — up, down, up, down!",
+      "tr": "Mangolar düşün. Herkes mango istediğinde fiyat YUKARI gider 📈. Kimse istemediğinde AŞAĞI gider 📉. Fiyatın dans gibi hareket etmesini izleriz — yukarı, aşağı, yukarı, aşağı!",
+      "th": "นึกถึงมะม่วง เมื่อทุกคนต้องการมะม่วง ราคาจะขึ้น 📈 เมื่อไม่มีใครต้องการ ราคาจะลง 📉 เราดูราคาเคลื่อนไหวเหมือนการเต้นรำ — ขึ้น ลง ขึ้น ลง!",
+      "ru": "Думайте о манго. Когда все хотят манго, цена идёт ВВЕРХ 📈. Когда никто не хочет, цена идёт ВНИЗ 📉. Мы наблюдаем, как цена движется как танец — вверх, вниз, вверх, вниз!",
+      "zh": "想想芒果。当每个人都想要芒果时，价格就会上涨 📈。当没有人想要时，价格就会下跌 📉。我们像看舞蹈一样看价格变动——涨、跌、涨、跌！",
+      "es": "Piensa en los mangos. Cuando todos quieren mangos, el precio sube 📈. Cuando nadie los quiere, el precio baja 📉. ¡Vemos el precio moverse como un baile — arriba, abajo, arriba, abajo!"
+    },
+    "visual_cue": "Animation of mango prices going up and down in a basket.",
+    "quiz": {
+      "question": { "en": "When everyone wants mangoes, what happens to the price?", "tr": "Herkes mango istediğinde fiyata ne olur?", "th": "เมื่อทุกคนต้องการมะม่วง ราคาเป็นอย่างไร?", "ru": "Когда все хотят манго, что происходит с ценой?", "zh": "当每个人都想要芒果时，价格会怎样？", "es": "Cuando todos quieren mangos, ¿qué pasa con el precio?" },
+      "options": { "en": ["Goes up", "Goes down", "Stays the same", "Disappears"], "tr": ["Yükselir", "Düşer", "Aynı kalır", "Kaybolur"], "th": ["ขึ้น", "ลง", "คงที่", "หายไป"], "ru": ["Растёт", "Падает", "Остаётся прежней", "Исчезает"], "zh": ["上涨", "下跌", "保持不变", "消失"], "es": ["Sube", "Baja", "Se mantiene igual", "Desaparece"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 2,
+    "emoji": "🕯️",
+    "title": {
+      "en": "What is a Candlestick?",
+      "tr": "Şamdan Nedir?",
+      "th": "แท่งเทียนคืออะไร?",
+      "ru": "Что такое Свеча?",
+      "zh": "什么是蜡烛图？",
+      "es": "¿Qué es una Vela?"
+    },
+    "content": {
+      "en": "A candle on a chart shows one time period. The body shows open & close price. The wicks show how high and low price went. GREEN candle = price went UP. RED candle = price went DOWN. Easy!",
+      "tr": "Grafikteki bir şamdan bir zaman dilimini gösterir. Gövde açılış ve kapanış fiyatını gösterir. Fitiller fiyatın ne kadar yüksek ve düşük gittiğini gösterir. YEŞİL şamdan = fiyat YUKARI gitti. KIRMIZI = AŞAĞI gitti.",
+      "th": "เทียนบนกราฟแสดงช่วงเวลาหนึ่ง ตัวเทียนแสดงราคาเปิดและปิด ไส้เทียนแสดงว่าราคาสูงและต่ำแค่ไหน เทียนเขียว = ราคาขึ้น เทียนแดง = ราคาลง ง่ายมาก!",
+      "ru": "Свеча на графике показывает один временной период. Тело показывает цены открытия и закрытия. Тени показывают максимум и минимум. ЗЕЛЁНАЯ свеча = цена выросла. КРАСНАЯ = упала.",
+      "zh": "图表上的一根蜡烛代表一个时间段。蜡烛体显示开盘价和收盘价。蜡烛的影线显示价格的高点和低点。绿色蜡烛=价格上涨。红色蜡烛=价格下跌。",
+      "es": "Una vela en el gráfico muestra un período de tiempo. El cuerpo muestra los precios de apertura y cierre. Las mechas muestran cuán alto y bajo fue el precio. Vela VERDE = precio SUBIÓ. Vela ROJA = BAJÓ."
+    },
+    "visual_cue": "Labelled candlestick diagram showing body, wicks, open, high, low, close.",
+    "quiz": {
+      "question": { "en": "What colour is a candle when price goes UP?", "tr": "Fiyat yükseldiğinde şamdan hangi renktir?", "th": "เมื่อราคาขึ้น เทียนจะมีสีอะไร?", "ru": "Какого цвета свеча, когда цена растёт?", "zh": "当价格上涨时，蜡烛是什么颜色？", "es": "¿De qué color es la vela cuando el precio sube?" },
+      "options": { "en": ["Green", "Red", "Blue", "Yellow"], "tr": ["Yeşil", "Kırmızı", "Mavi", "Sarı"], "th": ["เขียว", "แดง", "น้ำเงิน", "เหลือง"], "ru": ["Зелёная", "Красная", "Синяя", "Жёлтая"], "zh": ["绿色", "红色", "蓝色", "黄色"], "es": ["Verde", "Rojo", "Azul", "Amarillo"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 3,
+    "emoji": "🐂🐻",
+    "title": {
+      "en": "Bull vs Bear",
+      "tr": "Boğa vs Ayı",
+      "th": "วัวกระทิง vs หมี",
+      "ru": "Бык против Медведя",
+      "zh": "牛市 vs 熊市",
+      "es": "Toro vs Oso"
+    },
+    "content": {
+      "en": "A BULL 🐂 pushes prices UP with its horns — this is a Bull Market (everyone is happy 🎉). A BEAR 🐻 pushes prices DOWN with its paws — this is a Bear Market (prices falling 😢). Smart traders know which animal is in charge!",
+      "tr": "Bir BOĞA 🐂 fiyatları boynuzlarıyla YUKARI iter — Boğa Piyasası (herkes mutlu 🎉). Bir AYI 🐻 fiyatları pençeleriyle AŞAĞI iter — Ayı Piyasası (fiyatlar düşüyor 😢). Akıllı traderlar hangi hayvanın kontrolde olduğunu bilir!",
+      "th": "วัวกระทิง 🐂 ดันราคาขึ้นด้วยเขา — ตลาดกระทิง (ทุกคนมีความสุข 🎉) หมี 🐻 กดราคาลงด้วยอุ้งเท้า — ตลาดหมี (ราคากำลังลง 😢) นักเทรดที่ฉลาดรู้ว่าสัตว์ตัวไหนเป็นผู้ควบคุม!",
+      "ru": "БЫК 🐂 толкает цены ВВЕРХ рогами — это Бычий рынок (все счастливы 🎉). МЕДВЕДЬ 🐻 толкает цены ВНИЗ лапами — это Медвежий рынок (цены падают 😢). Умные трейдеры знают, какое животное управляет!",
+      "zh": "公牛 🐂 用牛角将价格往上顶——这是牛市（大家都开心 🎉）。熊 🐻 用熊掌将价格往下压——这是熊市（价格下跌 😢）。聪明的交易者知道哪种动物掌控市场！",
+      "es": "Un TORO 🐂 empuja los precios hacia ARRIBA con sus cuernos — esto es un Mercado Alcista (todos están felices 🎉). Un OSO 🐻 empuja los precios hacia ABAJO con sus patas — esto es un Mercado Bajista (precios cayendo 😢). ¡Los traders inteligentes saben qué animal está a cargo!"
+    },
+    "visual_cue": "Fun cartoon bull pushing chart up, bear pushing chart down.",
+    "quiz": {
+      "question": { "en": "Which animal represents rising prices?", "tr": "Hangi hayvan yükselen fiyatları temsil eder?", "th": "สัตว์ชนิดใดแทนราคาที่เพิ่มขึ้น?", "ru": "Какое животное символизирует рост цен?", "zh": "哪种动物代表价格上涨？", "es": "¿Qué animal representa precios en alza?" },
+      "options": { "en": ["Bull", "Bear", "Cat", "Dog"], "tr": ["Boğa", "Ayı", "Kedi", "Köpek"], "th": ["วัวกระทิง", "หมี", "แมว", "สุนัข"], "ru": ["Бык", "Медведь", "Кошка", "Собака"], "zh": ["牛", "熊", "猫", "狗"], "es": ["Toro", "Oso", "Gato", "Perro"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 4,
+    "emoji": "🏦",
+    "title": {
+      "en": "The Giants (Smart Money)",
+      "tr": "Devler (Akıllı Para)",
+      "th": "ยักษ์ใหญ่ (เงินอัจฉริยะ)",
+      "ru": "Гиганты (Умные Деньги)",
+      "zh": "巨人（聪明钱）",
+      "es": "Los Gigantes (Dinero Inteligente)"
+    },
+    "content": {
+      "en": "In the market, there are Giants — big banks and funds with billions! 🏦 When they step, they leave big footprints called 'Order Blocks'. We don't fight the Giants; we follow their footprints to find treasure!",
+      "tr": "Pazarda Devler var — milyarlarca dolarlı büyük bankalar ve fonlar! 🏦 Adım attıklarında 'Order Block' adı verilen büyük ayak izleri bırakırlar. Devlerle savaşmayız; hazineyi bulmak için ayak izlerini takip ederiz!",
+      "th": "ในตลาดมียักษ์ใหญ่ — ธนาคารขนาดใหญ่และกองทุนที่มีเงินหลายพันล้าน! 🏦 เมื่อพวกเขาก้าว จะทิ้งรอยเท้าขนาดใหญ่ที่เรียกว่า 'Order Blocks' เราไม่ต่อสู้กับยักษ์ใหญ่ เราติดตามรอยเท้าของพวกเขาเพื่อหาสมบัติ!",
+      "ru": "На рынке есть Гиганты — крупные банки и фонды с миллиардами! 🏦 Когда они ступают, они оставляют большие следы, называемые 'Order Blocks'. Мы не сражаемся с Гигантами; мы следуем их следам, чтобы найти сокровище!",
+      "zh": "市场上有巨人——拥有数十亿资金的大银行和基金！🏦 当他们出手时，会留下被称为"订单块"的巨大足迹。我们不与巨人对抗；我们跟随他们的足迹寻找宝藏！",
+      "es": "En el mercado hay Gigantes — ¡grandes bancos y fondos con miles de millones! 🏦 Cuando dan un paso, dejan grandes huellas llamadas 'Order Blocks'. No luchamos contra los Gigantes; ¡seguimos sus huellas para encontrar el tesoro!"
+    },
+    "visual_cue": "Giant footprints glowing on a chart.",
+    "quiz": {
+      "question": { "en": "What are 'Order Blocks'?", "tr": "'Order Block' nedir?", "th": "'Order Blocks' คืออะไร?", "ru": "Что такое 'Order Blocks'?", "zh": "什么是"订单块"？", "es": "¿Qué son los 'Order Blocks'?" },
+      "options": { "en": ["Giant footprints in the market", "A type of sandwich", "A video game level", "A kind of shoe"], "tr": ["Pazardaki dev ayak izleri", "Bir sandviç türü", "Bir video oyunu seviyesi", "Bir ayakkabı türü"], "th": ["รอยเท้ายักษ์ในตลาด", "ประเภทของแซนด์วิช", "ด่านในวิดีโอเกม", "ประเภทของรองเท้า"], "ru": ["Гигантские следы на рынке", "Вид бутерброда", "Уровень видеоигры", "Вид обуви"], "zh": ["市场中的巨大足迹", "一种三明治", "视频游戏关卡", "一种鞋子"], "es": ["Huellas gigantes en el mercado", "Un tipo de sándwich", "Un nivel de videojuego", "Un tipo de zapato"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 5,
+    "emoji": "🌊",
+    "title": {
+      "en": "The Waves (Elliott Theory)",
+      "tr": "Dalgalar (Elliott Teorisi)",
+      "th": "คลื่น (ทฤษฎีเอลเลียต)",
+      "ru": "Волны (Теория Эллиотта)",
+      "zh": "波浪（艾略特波浪理论）",
+      "es": "Las Olas (Teoría de Elliott)"
+    },
+    "content": {
+      "en": "Prices move like ocean waves 🌊. There are 5 waves going forward (Action waves 1-2-3-4-5!) and 3 waves going backward (Rest waves A-B-C). If we count the waves correctly, we know where the price boat will go next!",
+      "tr": "Fiyatlar okyanus dalgaları gibi hareket eder 🌊. 5 ileri dalga (Aksiyon dalgaları 1-2-3-4-5!) ve 3 geri dalga (Dinlenme dalgaları A-B-C) vardır. Dalgaları doğru sayarsak, fiyat teknesinin nereye gideceğini biliriz!",
+      "th": "ราคาเคลื่อนไหวเหมือนคลื่นทะเล 🌊 มีคลื่น 5 ลูกที่เคลื่อนไปข้างหน้า (คลื่นแอคชั่น 1-2-3-4-5!) และคลื่น 3 ลูกที่ถอยหลัง (คลื่นพัก A-B-C) ถ้าเรานับคลื่นได้ถูกต้อง เราจะรู้ว่าเรือราคาจะไปที่ไหนต่อ!",
+      "ru": "Цены движутся как морские волны 🌊. Есть 5 волн вперёд (Волны действия 1-2-3-4-5!) и 3 волны назад (Волны отдыха A-B-C). Если мы правильно посчитаем волны, мы знаем, куда поплывёт ценовая лодка!",
+      "zh": "价格像海浪一样运动 🌊。有5个向前的波（行动波1-2-3-4-5！）和3个向后的波（休息波A-B-C）。如果我们正确地数波浪，我们就知道价格的船会去哪里！",
+      "es": "Los precios se mueven como olas del océano 🌊. Hay 5 olas que van hacia adelante (¡Olas de acción 1-2-3-4-5!) y 3 olas que van hacia atrás (Olas de descanso A-B-C). ¡Si contamos las olas correctamente, sabemos adónde irá el barco precio!"
+    },
+    "visual_cue": "A boat riding 5 waves up and 3 waves down with numbered labels.",
+    "quiz": {
+      "question": { "en": "How many action waves are there in Elliott Wave theory?", "tr": "Elliott Dalgası teorisinde kaç aksiyon dalgası vardır?", "th": "ทฤษฎีคลื่นเอลเลียตมีคลื่นแอคชั่นกี่ลูก?", "ru": "Сколько волн действия в теории Эллиотта?", "zh": "在艾略特波浪理论中有几个行动波？", "es": "¿Cuántas olas de acción hay en la teoría de Elliott?" },
+      "options": { "en": ["5", "3", "7", "10"], "tr": ["5", "3", "7", "10"], "th": ["5", "3", "7", "10"], "ru": ["5", "3", "7", "10"], "zh": ["5", "3", "7", "10"], "es": ["5", "3", "7", "10"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 6,
+    "emoji": "🤖",
+    "title": {
+      "en": "The Robot Helper (U2Algo)",
+      "tr": "Robot Yardımcı (U2Algo)",
+      "th": "หุ่นยนต์ผู้ช่วย (U2Algo)",
+      "ru": "Робот-Помощник (U2Algo)",
+      "zh": "机器人助手（U2Algo）",
+      "es": "El Robot Asistente (U2Algo)"
+    },
+    "content": {
+      "en": "Counting waves and finding footprints is hard! 😅 That's why we have U2Algo 🤖. It's a smart AI robot that watches the market 24/7, counts waves automatically, and tells us when the Giants are moving. It's like having a superpower!",
+      "tr": "Dalgaları saymak ve ayak izlerini bulmak zor! 😅 Bu yüzden U2Algo'muz var 🤖. Pazarı 7/24 izleyen, dalgaları otomatik sayan ve Devlerin ne zaman hareket ettiğini bize söyleyen akıllı bir yapay zeka robotudur. Süper güce sahip olmak gibi!",
+      "th": "การนับคลื่นและหารอยเท้ายากมาก! 😅 นั่นคือเหตุผลที่เรามี U2Algo 🤖 มันเป็นหุ่นยนต์ AI อัจฉริยะที่คอยดูตลาด 24/7 นับคลื่นโดยอัตโนมัติ และบอกเราเมื่อยักษ์ใหญ่กำลังเคลื่อนที่ มันเหมือนมีพลังพิเศษ!",
+      "ru": "Считать волны и находить следы сложно! 😅 Вот почему у нас есть U2Algo 🤖. Это умный ИИ-робот, который наблюдает за рынком 24/7, автоматически считает волны и сообщает нам, когда движутся Гиганты. Это как иметь суперспособность!",
+      "zh": "数波浪和找足迹很难！😅 这就是为什么我们有U2Algo 🤖。这是一个智能AI机器人，全天候监视市场，自动数波浪，并在巨人移动时告诉我们。这就像拥有超能力！",
+      "es": "¡Contar olas y encontrar huellas es difícil! 😅 ¡Por eso tenemos U2Algo 🤖! Es un robot de IA inteligente que monitorea el mercado 24/7, cuenta olas automáticamente y nos dice cuándo los Gigantes se están moviendo. ¡Es como tener un superpoder!"
+    },
+    "visual_cue": "A cute robot scanning a chart with laser eyes, wearing a superhero cape.",
+    "quiz": {
+      "question": { "en": "What does U2Algo do?", "tr": "U2Algo ne yapar?", "th": "U2Algo ทำอะไร?", "ru": "Что делает U2Algo?", "zh": "U2Algo做什么？", "es": "¿Qué hace U2Algo?" },
+      "options": { "en": ["Watches the market and counts waves", "Cooks dinner", "Plays football", "Teaches maths"], "tr": ["Pazarı izler ve dalgaları sayar", "Akşam yemeği pişirir", "Futbol oynar", "Matematik öğretir"], "th": ["ดูตลาดและนับคลื่น", "ทำอาหารเย็น", "เล่นฟุตบอล", "สอนคณิตศาสตร์"], "ru": ["Наблюдает за рынком и считает волны", "Готовит ужин", "Играет в футбол", "Учит математике"], "zh": ["监视市场并数波浪", "做晚饭", "踢足球", "教数学"], "es": ["Observa el mercado y cuenta olas", "Cocina la cena", "Juega al fútbol", "Enseña matemáticas"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 7,
+    "emoji": "⚠️",
+    "title": {
+      "en": "The Risk Robot",
+      "tr": "Risk Robotu",
+      "th": "หุ่นยนต์ความเสี่ยง",
+      "ru": "Робот Риска",
+      "zh": "风险机器人",
+      "es": "El Robot de Riesgo"
+    },
+    "content": {
+      "en": "Smart traders never risk all their treasure! 🏴‍☠️ The rule: only risk 1-2% of your money on one trade. If you have 100 coins and risk 2%, you can only lose 2 coins. This way you can play the game many times — even if you lose a few rounds!",
+      "tr": "Akıllı traderlar tüm hazinelerini asla riske atmaz! 🏴‍☠️ Kural: tek bir işlemde paranızın yalnızca %1-2'sini riske edin. 100 altınınız varsa ve %2 riske ediyorsanız, yalnızca 2 altın kaybedebilirsiniz. Bu şekilde birkaç tur kaybetseniz bile oyunu çok kez oynayabilirsiniz!",
+      "th": "นักเทรดที่ฉลาดไม่เคยเสี่ยงสมบัติทั้งหมด! 🏴‍☠️ กฎ: เสี่ยงเพียง 1-2% ของเงินของคุณในการเทรดครั้งเดียว ถ้าคุณมี 100 เหรียญและเสี่ยง 2% คุณแพ้ได้แค่ 2 เหรียญ วิธีนี้คุณสามารถเล่นเกมหลายครั้ง — แม้ว่าคุณจะแพ้สักไม่กี่รอบ!",
+      "ru": "Умные трейдеры никогда не рискуют всем своим сокровищем! 🏴‍☠️ Правило: рискуйте только 1-2% своих денег в одной сделке. Если у вас 100 монет и вы рискуете 2%, вы можете потерять только 2 монеты. Так вы можете играть много раз — даже если проиграете несколько раундов!",
+      "zh": "聪明的交易者永远不会把所有宝藏都押注！🏴‍☠️ 规则：每次交易只冒1-2%的风险。如果你有100枚硬币并冒险2%，你最多损失2枚硬币。这样即使输几轮，你也可以玩很多次！",
+      "es": "¡Los traders inteligentes nunca arriesgan todo su tesoro! 🏴‍☠️ La regla: solo arriesga el 1-2% de tu dinero en una operación. Si tienes 100 monedas y arriesgas el 2%, solo puedes perder 2 monedas. ¡De esta manera puedes jugar muchas veces, incluso si pierdes algunas rondas!"
+    },
+    "visual_cue": "A piggy bank with a protective shield, only 2 coins flying out.",
+    "quiz": {
+      "question": { "en": "What is the safe risk amount per trade?", "tr": "İşlem başına güvenli risk miktarı nedir?", "th": "จำนวนความเสี่ยงที่ปลอดภัยต่อการเทรดคือเท่าไหร่?", "ru": "Какой безопасный размер риска на сделку?", "zh": "每次交易安全的风险比例是多少？", "es": "¿Cuál es el monto de riesgo seguro por operación?" },
+      "options": { "en": ["1-2%", "50%", "100%", "25%"], "tr": ["%1-2", "%50", "%100", "%25"], "th": ["1-2%", "50%", "100%", "25%"], "ru": ["1-2%", "50%", "100%", "25%"], "zh": ["1-2%", "50%", "100%", "25%"], "es": ["1-2%", "50%", "100%", "25%"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 8,
+    "emoji": "📓",
+    "title": {
+      "en": "The Trade Journal",
+      "tr": "İşlem Günlüğü",
+      "th": "บันทึกการเทรด",
+      "ru": "Торговый Журнал",
+      "zh": "交易日记",
+      "es": "El Diario de Trading"
+    },
+    "content": {
+      "en": "Every great trader keeps a journal 📓! Write down: WHY you entered a trade, WHERE you put your stop-loss, and WHAT happened. After 20 trades, you can look back and learn from your mistakes. Great traders learn MORE from losses than wins!",
+      "tr": "Her büyük trader bir günlük tutar 📓! Şunları yaz: bir işleme NEDEN girdin, stop-loss'unu NEREYE koydun ve NE OLDU. 20 işlem sonra geri bakıp hatalarından öğrenebilirsin. Büyük traderlar kazançlardan çok kayıplardan DAHA FAZLA öğrenir!",
+      "th": "นักเทรดผู้ยิ่งใหญ่ทุกคนเก็บบันทึก 📓! เขียน: ว่าทำไมคุณเข้าเทรด วางสต็อปล็อสไว้ที่ไหน และเกิดอะไรขึ้น หลังจากเทรด 20 ครั้ง คุณสามารถมองย้อนกลับและเรียนรู้จากความผิดพลาด นักเทรดผู้ยิ่งใหญ่เรียนรู้จากการแพ้มากกว่าการชนะ!",
+      "ru": "Каждый великий трейдер ведёт журнал 📓! Записывайте: ПОЧЕМУ вошли в сделку, ГДЕ поставили стоп-лосс, и ЧТО произошло. После 20 сделок вы можете оглянуться и учиться на своих ошибках. Великие трейдеры учатся на потерях БОЛЬШЕ, чем на победах!",
+      "zh": "每位伟大的交易者都保留日记 📓！写下：你为什么进入交易，你把止损放在哪里，以及发生了什么。20次交易后，你可以回顾并从错误中学习。伟大的交易者从亏损中学到的东西比从盈利中学到的更多！",
+      "es": "¡Todo gran trader lleva un diario 📓! Anota: POR QUÉ entraste en una operación, DÓNDE pusiste tu stop-loss, y QUÉ pasó. Después de 20 operaciones, puedes mirar atrás y aprender de tus errores. ¡Los grandes traders aprenden MÁS de las pérdidas que de las ganancias!"
+    },
+    "visual_cue": "A colourful journal open with trade notes, charts, and emoji emotions.",
+    "quiz": {
+      "question": { "en": "What should you write in a trade journal?", "tr": "İşlem günlüğüne ne yazmalısın?", "th": "คุณควรเขียนอะไรในบันทึกการเทรด?", "ru": "Что нужно писать в торговом журнале?", "zh": "你应该在交易日记里写什么？", "es": "¿Qué debes escribir en un diario de trading?" },
+      "options": { "en": ["Why you entered, stop-loss, what happened", "Your favourite songs", "The weather", "Homework answers"], "tr": ["Neden girdin, stop-loss, ne oldu", "En sevdiğin şarkılar", "Hava durumu", "Ödev cevapları"], "th": ["ทำไมเข้า สต็อปล็อส เกิดอะไร", "เพลงโปรด", "สภาพอากาศ", "คำตอบการบ้าน"], "ru": ["Почему вошёл, стоп-лосс, что произошло", "Любимые песни", "Погода", "Ответы на домашние задания"], "zh": ["为什么进入、止损、发生了什么", "你最喜欢的歌", "天气", "作业答案"], "es": ["Por qué entraste, stop-loss, qué pasó", "Tus canciones favoritas", "El clima", "Respuestas de tarea"] },
+      "correct": 0
+    }
+  },
+  {
+    "id": 9,
+    "emoji": "🏆",
+    "title": {
+      "en": "Your First Trade Story",
+      "tr": "İlk İşlem Hikayen",
+      "th": "เรื่องราวการเทรดครั้งแรกของคุณ",
+      "ru": "История Твоей Первой Сделки",
+      "zh": "你的第一笔交易故事",
+      "es": "Tu Primera Historia de Trading"
+    },
+    "content": {
+      "en": "🎉 You did it! You now know: What a Market is • Candles & Charts • Bull vs Bear • Order Blocks • Elliott Waves • Risk Management • Trade Journaling. Now go practice with paper trading (fake money first!) and use U2Algo as your guide. Every expert was once a beginner! 🚀",
+      "tr": "🎉 Başardın! Artık biliyorsun: Pazar nedir • Şamdan ve Grafikler • Boğa vs Ayı • Order Block'lar • Elliott Dalgaları • Risk Yönetimi • İşlem Günlüğü. Şimdi paper trading ile pratik yap (önce sahte para!) ve U2Algo'yu rehberin olarak kullan. Her uzman bir zamanlar başlangıçtı! 🚀",
+      "th": "🎉 คุณทำได้! ตอนนี้คุณรู้: ตลาดคืออะไร • เทียนและกราฟ • วัวกระทิง vs หมี • Order Blocks • คลื่นเอลเลียต • การจัดการความเสี่ยง • บันทึกการเทรด ตอนนี้ไปฝึกด้วย paper trading (เงินปลอมก่อน!) และใช้ U2Algo เป็นแนวทาง ผู้เชี่ยวชาญทุกคนเคยเป็นมือใหม่! 🚀",
+      "ru": "🎉 Ты справился! Теперь ты знаешь: Что такое Рынок • Свечи и Графики • Бык против Медведя • Order Blocks • Волны Эллиотта • Управление Рисками • Торговый Журнал. Теперь практикуйся с бумажной торговлей (сначала на виртуальные деньги!) и используй U2Algo как своего наставника. Каждый эксперт когда-то был новичком! 🚀",
+      "zh": "🎉 你做到了！现在你知道：什么是市场 • 蜡烛图和图表 • 牛市vs熊市 • 订单块 • 艾略特波浪 • 风险管理 • 交易日记。现在用模拟交易练习（先用假钱！），把U2Algo作为你的向导。每个专家都曾经是初学者！🚀",
+      "es": "🎉 ¡Lo lograste! Ahora sabes: Qué es un Mercado • Velas y Gráficos • Toro vs Oso • Order Blocks • Ondas de Elliott • Gestión de Riesgo • Diario de Trading. ¡Ahora practica con paper trading (¡dinero falso primero!) y usa U2Algo como tu guía. ¡Todo experto fue una vez un principiante! 🚀"
+    },
+    "visual_cue": "Graduation cap, trophy, rocket launching — celebrating a young trader.",
+    "quiz": {
+      "question": { "en": "What should you use before trading with real money?", "tr": "Gerçek para ile işlem yapmadan önce ne kullanmalısın?", "th": "คุณควรใช้อะไรก่อนเทรดด้วยเงินจริง?", "ru": "Что нужно использовать перед торговлей на реальные деньги?", "zh": "在用真实资金交易之前，你应该使用什么？", "es": "¿Qué deberías usar antes de operar con dinero real?" },
+      "options": { "en": ["Paper trading (fake money)", "Real money right away", "Your parent's credit card", "Nothing, just jump in"], "tr": ["Paper trading (sahte para)", "Hemen gerçek para", "Ebeveyninin kredi kartı", "Hiçbir şey, hemen atla"], "th": ["Paper trading (เงินปลอม)", "ใช้เงินจริงเลย", "บัตรเครดิตของพ่อแม่", "ไม่มีอะไร แค่ลงมือทำ"], "ru": ["Бумажная торговля (виртуальные деньги)", "Сразу реальные деньги", "Кредитную карту родителей", "Ничего, просто начинай"], "zh": ["模拟交易（假钱）", "立即使用真实资金", "父母的信用卡", "什么都不用，直接开始"], "es": ["Paper trading (dinero falso)", "Dinero real de inmediato", "La tarjeta de crédito de tus padres", "Nada, solo entra"] },
+      "correct": 0
+    }
+  }
+]

@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+.git/
+.github/
+.vs/
+*.user
+*.suo
+*.pdb
+

@@ -1,0 +1,98 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-ukeytr}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${DB_NAME:-ukeytr};Username=${DB_USER:-postgres};Password=${DB_PASSWORD:-postgres}"
+      AiEngine__BaseUrl: "http://ai-engine:8000"
+      Auth__SigningKey: ${AUTH_SIGNING_KEY:-change-me-in-production-32chars!}
+      Auth__Issuer: ${AUTH_ISSUER:-ukeytr}
+      Auth__Audience: ${AUTH_AUDIENCE:-ukeytr-users}
+      AI__AnthropicApiKey: ${ANTHROPIC_API_KEY:-}
+      Telegram__BotToken: ${TELEGRAM_BOT_TOKEN:-}
+      Telegram__ChatId: ${TELEGRAM_CHAT_ID:-}
+      Cors__AllowedOrigins__0: "http://localhost:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://localhost:8080"
+    depends_on:
+      - backend
+
+  ai-engine:
+    build:
+      context: ./ai-engine
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      U2ALGO_DATABASE_URL: "postgresql://${DB_USER:-postgres}:${DB_PASSWORD:-postgres}@postgres:5432/${DB_NAME:-ukeytr}"
+      U2ALGO_BINANCE_API_KEY: ${BINANCE_API_KEY:-}
+      U2ALGO_BINANCE_API_SECRET: ${BINANCE_API_SECRET:-}
+      U2ALGO_TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      U2ALGO_TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+      U2ALGO_DEBUG: ${DEBUG:-false}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  school:
+    build:
+      context: ./school
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: "http://localhost:8080"
+    depends_on:
+      - backend
+
+  games:
+    build:
+      context: ./games
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3002:3000"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: "http://localhost:8080"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

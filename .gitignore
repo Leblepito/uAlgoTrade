@@ -1,0 +1,64 @@
+# Dependencies
+**/node_modules/
+**/.pnp
+**/.pnp.js
+
+# Build outputs
+**/.next/
+**/out/
+**/build/
+**/dist/
+**/obj/
+**/bin/
+**/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+**/.venv/
+**/venv/
+
+# Environment
+**/.env
+**/.env.local
+**/.env.*.local
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+**/coverage/
+**/.pytest_cache/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+*.swp
+*.swo
+*~
+
+# Sensitive / temporary
+tmp_vars.json
+*.local.json
+
+# Package locks (keep only root or per-service)
+# frontend/package-lock.json
+# school/package-lock.json
