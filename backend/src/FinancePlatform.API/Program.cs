@@ -68,6 +68,10 @@ builder.Services.AddSingleton<IPasswordHasher<AuthService.PasswordHasherUser>, P
 builder.Services.AddSingleton<FinancePlatform.API.Services.AlertBackgroundService>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<FinancePlatform.API.Services.AlertBackgroundService>());
 
+// Stripe Payments
+builder.Services.Configure<FinancePlatform.API.Services.StripeOptions>(builder.Configuration.GetSection("Stripe"));
+builder.Services.AddSingleton<FinancePlatform.API.Services.StripeService>();
+
 // AI Services
 builder.Services.AddHttpClient<FinancePlatform.API.Services.AnthropicService>();
 builder.Services.AddScoped<FinancePlatform.API.Services.IAIAgentService, FinancePlatform.API.Services.AnthropicService>();
