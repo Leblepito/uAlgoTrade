@@ -15,7 +15,7 @@ interface BacktestSettingsProps {
 }
 
 function apiBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 }
 
 async function fetchJson<T>(url: string): Promise<T> {

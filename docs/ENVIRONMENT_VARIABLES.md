@@ -32,7 +32,7 @@
 ## Service URLs
 | Variable | Service | Default | Description |
 |----------|---------|---------|-------------|
-| `NEXT_PUBLIC_API_URL` | Frontend | `http://localhost:8080` | Backend API URL |
+| `NEXT_PUBLIC_API_BASE_URL` | Frontend | `http://localhost:8080` | Backend API URL |
 | `AiEngine__BaseUrl` | Backend | `http://localhost:8000` | AI Engine URL |
 
 ## AI Engine Agent Config

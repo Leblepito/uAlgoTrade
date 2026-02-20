@@ -109,7 +109,7 @@ async function syncLocaleWithBackend(locale: Locale): Promise<void> {
   const token = localStorage.getItem("fp_access_token");
   if (!token) return;
 
-  const base = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+  const base = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
   await fetch(`${base}/api/account/language`, {
     method: "PATCH",
     headers: {

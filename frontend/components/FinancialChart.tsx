@@ -106,7 +106,7 @@ async function fetchJson<T>(url: string, signal?: AbortSignal): Promise<T> {
 }
 
 function apiBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+  return process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 }
 
 function parseApiDateToUnixSeconds(dateString: string): number | null {

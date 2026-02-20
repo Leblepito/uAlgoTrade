@@ -25,6 +25,7 @@ RUN dotnet publish "FinancePlatform.API.csproj" -c Release -o /app/publish /p:Us
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENV ASPNETCORE_URLS=http://+:8080
+# Railway sets PORT dynamically; Program.cs reads it. Default to 8080 for local dev.
+ENV ASPNETCORE_URLS=http://+:${PORT:-8080}
 EXPOSE 8080
 ENTRYPOINT ["dotnet", "FinancePlatform.API.dll"]

@@ -30,7 +30,7 @@ interface AlertPanelProps {
 }
 
 const API_BASE = typeof window !== "undefined"
-    ? process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033"
+    ? process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080"
     : "";
 const TELEGRAM_JOIN_URL =
     process.env.NEXT_PUBLIC_TELEGRAM_CHANNEL_URL || "https://t.me/ukeytr";

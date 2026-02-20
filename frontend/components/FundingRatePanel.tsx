@@ -59,7 +59,7 @@ export default function FundingRatePanel() {
 
   const fetchData = async () => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5033";
+      const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
       const res = await fetch(`${apiUrl}/api/FundingRate/btc/debug`);
       if (!res.ok) throw new Error("Failed to fetch");
       const json = await res.json();
