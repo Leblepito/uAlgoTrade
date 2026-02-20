@@ -217,7 +217,7 @@ public sealed class PostgresAuthRepository
     public async Task<Guid> CreateUserAsync(string email, string passwordHash, string? displayName, CancellationToken ct, string preferredLanguage = "en")
     {
         // Validate language code
-        var validLangs = new[] { "en", "tr", "th", "ru", "zh", "es" };
+        var validLangs = new[] { "en", "tr", "th", "ar", "ru", "zh" };
         var lang = validLangs.Contains(preferredLanguage) ? preferredLanguage : "en";
 
         const string sql = """
@@ -240,7 +240,7 @@ public sealed class PostgresAuthRepository
 
     public async Task UpdatePreferredLanguageAsync(Guid userId, string language, CancellationToken ct)
     {
-        var validLangs = new[] { "en", "tr", "th", "ru", "zh", "es" };
+        var validLangs = new[] { "en", "tr", "th", "ar", "ru", "zh" };
         var lang = validLangs.Contains(language) ? language : "en";
 
         const string sql = """
