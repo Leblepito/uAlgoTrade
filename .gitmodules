@@ -1,0 +1,6 @@
+[submodule "uKeyTr"]
+	path = uKeyTr
+	url = https://github.com/Leblepito/uKeyTr.git
+[submodule "ThaiTurk"]
+	path = ThaiTurk
+	url = https://github.com/Leblepito/Med-UI-Tra.git
