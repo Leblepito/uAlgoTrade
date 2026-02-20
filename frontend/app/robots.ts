@@ -9,6 +9,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/api/", "/health"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/", "/health"],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
