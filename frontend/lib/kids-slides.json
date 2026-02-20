@@ -15,7 +15,7 @@
       "tr": "İnsanların oyuncak, pirinç ve altın değiştirdiği dev bir oyun alanı hayal edin. Burası Pazar! Bugün burada oynayan devlerin 'ayak izlerini' okumayı öğreneceğiz.",
       "th": "ลองจินตนาการถึงสนามเด็กเล่นขนาดยักษ์ที่ผู้คนแลกเปลี่ยนของเล่น ข้าว และทอง นี่คือตลาด! วันนี้เราจะเรียนรู้วิธีอ่าน 'รอยเท้า' ของยักษ์ที่เล่นที่นี่",
       "ru": "Представьте огромную площадку, где люди меняют игрушки, рис и золото. Это Рынок! Сегодня мы научимся читать 'следы' гигантов, которые здесь играют.",
-      "zh": "想象一个巨大的游乐场，人们在这里交换玩具、大米和黄金。这就是市场！今天，我们将学习如何读懂在这里玩耍的巨人留下的"脚印"。",
+      "zh": "想象一个巨大的游乐场，人们在这里交换玩具、大米和黄金。这就是市场！今天，我们将学习如何读懂在这里玩耍的巨人留下的\"脚印\"。",
       "es": "Imagina un gran patio de juegos donde la gente intercambia juguetes, arroz y oro. ¡Este es el Mercado! Hoy aprenderemos a leer las 'huellas' de los gigantes que juegan aquí."
     },
     "visual_cue": "A colourful global marketplace with a friendly robot guide.",
@@ -119,12 +119,12 @@
       "tr": "Pazarda Devler var — milyarlarca dolarlı büyük bankalar ve fonlar! 🏦 Adım attıklarında 'Order Block' adı verilen büyük ayak izleri bırakırlar. Devlerle savaşmayız; hazineyi bulmak için ayak izlerini takip ederiz!",
       "th": "ในตลาดมียักษ์ใหญ่ — ธนาคารขนาดใหญ่และกองทุนที่มีเงินหลายพันล้าน! 🏦 เมื่อพวกเขาก้าว จะทิ้งรอยเท้าขนาดใหญ่ที่เรียกว่า 'Order Blocks' เราไม่ต่อสู้กับยักษ์ใหญ่ เราติดตามรอยเท้าของพวกเขาเพื่อหาสมบัติ!",
       "ru": "На рынке есть Гиганты — крупные банки и фонды с миллиардами! 🏦 Когда они ступают, они оставляют большие следы, называемые 'Order Blocks'. Мы не сражаемся с Гигантами; мы следуем их следам, чтобы найти сокровище!",
-      "zh": "市场上有巨人——拥有数十亿资金的大银行和基金！🏦 当他们出手时，会留下被称为"订单块"的巨大足迹。我们不与巨人对抗；我们跟随他们的足迹寻找宝藏！",
+      "zh": "市场上有巨人——拥有数十亿资金的大银行和基金！🏦 当他们出手时，会留下被称为\"订单块\"的巨大足迹。我们不与巨人对抗；我们跟随他们的足迹寻找宝藏！",
       "es": "En el mercado hay Gigantes — ¡grandes bancos y fondos con miles de millones! 🏦 Cuando dan un paso, dejan grandes huellas llamadas 'Order Blocks'. No luchamos contra los Gigantes; ¡seguimos sus huellas para encontrar el tesoro!"
     },
     "visual_cue": "Giant footprints glowing on a chart.",
     "quiz": {
-      "question": { "en": "What are 'Order Blocks'?", "tr": "'Order Block' nedir?", "th": "'Order Blocks' คืออะไร?", "ru": "Что такое 'Order Blocks'?", "zh": "什么是"订单块"？", "es": "¿Qué son los 'Order Blocks'?" },
+      "question": { "en": "What are 'Order Blocks'?", "tr": "'Order Block' nedir?", "th": "'Order Blocks' คืออะไร?", "ru": "Что такое 'Order Blocks'?", "zh": "什么是\"订单块\"？", "es": "¿Qué son los 'Order Blocks'?" },
       "options": { "en": ["Giant footprints in the market", "A type of sandwich", "A video game level", "A kind of shoe"], "tr": ["Pazardaki dev ayak izleri", "Bir sandviç türü", "Bir video oyunu seviyesi", "Bir ayakkabı türü"], "th": ["รอยเท้ายักษ์ในตลาด", "ประเภทของแซนด์วิช", "ด่านในวิดีโอเกม", "ประเภทของรองเท้า"], "ru": ["Гигантские следы на рынке", "Вид бутерброда", "Уровень видеоигры", "Вид обуви"], "zh": ["市场中的巨大足迹", "一种三明治", "视频游戏关卡", "一种鞋子"], "es": ["Huellas gigantes en el mercado", "Un tipo de sándwich", "Un nivel de videojuego", "Un tipo de zapato"] },
       "correct": 0
     }
