@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sidebar-link { @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-indigo-50 hover:text-indigo-700 transition-colors; }
+  .sidebar-link.active { @apply bg-indigo-50 text-indigo-700; }
+  .card { @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6; }
+  .stat-card { @apply card flex flex-col gap-1; }
+  .btn { @apply px-4 py-2 rounded-xl text-sm font-semibold transition-colors; }
+  .btn-primary { @apply btn bg-indigo-600 text-white hover:bg-indigo-700; }
+  .btn-ghost { @apply btn text-gray-600 hover:bg-gray-100; }
+  .badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium; }
+  .input { @apply border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full; }
+}
