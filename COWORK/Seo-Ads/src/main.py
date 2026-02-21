@@ -99,7 +99,7 @@ app = FastAPI(
     title="Seo-Ads",
     description="AI-powered, culture-aware social media content generation API. "
                 "Integrates into any website or app via REST API.",
-    version="1.0.0",
+    version="2.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
