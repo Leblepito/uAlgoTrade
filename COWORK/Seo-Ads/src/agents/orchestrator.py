@@ -1,4 +1,9 @@
-"""Orchestrator agent — the brain that analyzes tasks, spawns subagents, and merges results."""
+"""Orchestrator agent — the brain that analyzes tasks, spawns subagents, and merges results.
+
+LLM Routing:
+  - Orchestrator itself uses Claude (complex reasoning, task decomposition)
+  - Each subagent gets the best LLM via LLMRouter (Gemini for most, Claude for cultural/sensitive)
+"""
 
 from __future__ import annotations
 
@@ -9,6 +14,7 @@ from typing import Any
 
 from .base import BaseAgent
 from .llm_provider import LLMProvider
+from .llm_router import LLMRouter
 from .models import (
     AgentRole,
     AgentStepLog,
@@ -49,7 +55,12 @@ PLATFORM_SPECS = {
 
 
 class Orchestrator:
-    """Main orchestrator — receives goals, plans subtasks, spawns subagents, merges results."""
+    """Main orchestrator — receives goals, plans subtasks, spawns subagents, merges results.
+
+    Uses LLMRouter to automatically pick the best LLM for each task:
+    - Gemini: content writing, SEO, hashtags, campaign planning (fast, cost-effective)
+    - Claude: orchestration, cultural adaptation, synthesis (nuanced reasoning)
+    """
 
     SYSTEM_PROMPT = """You are the Orchestrator of an AI marketing agency for crypto/fintech brands.
 
@@ -71,10 +82,13 @@ Rules:
 6. Never exceed max_subagents limit
 7. Return valid JSON"""
 
-    def __init__(self, llm: LLMProvider):
-        self.llm = llm
+    def __init__(self, router: LLMRouter | None = None):
+        self.router = router or LLMRouter()
+        # Orchestrator uses Claude for planning (complex reasoning)
+        self.llm = self.router.route(role=AgentRole.orchestrator, instruction="task planning")
         self.logs: list[AgentStepLog] = []
         self.total_tokens: int = 0
+        self._providers_to_close: list[LLMProvider] = [self.llm]
 
     # ── Public API ────────────────────────────────────────
 
@@ -82,18 +96,20 @@ Rules:
         """Execute a free-form goal."""
         start = time.monotonic()
         response = AgentTaskResponse(goal=request.goal, status=TaskStatus.running)
+        subtasks: list[SubTask] = []
 
         try:
-            # Step 1: Plan subtasks
+            # Step 1: Plan subtasks (Claude — complex reasoning)
             self._log("plan", f"Analyzing goal: {request.goal[:100]}")
+            self._log("llm", f"Orchestrator using: {self.llm.provider_name}/{self.llm.config.model}")
             subtasks = await self._plan(request)
             response.subtasks = subtasks
             self._log("plan", f"Planned {len(subtasks)} subtasks")
 
-            # Step 2: Execute subtasks (respecting dependencies)
+            # Step 2: Execute subtasks (each gets optimal LLM via router)
             await self._execute_subtasks(subtasks)
 
-            # Step 3: Synthesize final result
+            # Step 3: Synthesize final result (Claude — merging complex data)
             self._log("synthesize", "Merging subagent results")
             final = await self._synthesize(request.goal, subtasks)
             response.result = final
@@ -106,9 +122,12 @@ Rules:
             logger.exception("Orchestrator failed")
 
         response.logs = self.logs
-        response.subtasks = subtasks if 'subtasks' in dir() else []
+        response.subtasks = subtasks
         response.total_tokens_used = self.total_tokens
         response.duration_ms = int((time.monotonic() - start) * 1000)
+
+        # Cleanup all LLM providers
+        await self._cleanup()
         return response
 
     async def run_campaign(self, request: CampaignRequest) -> AgentTaskResponse:
@@ -163,7 +182,6 @@ Subtasks with the same priority run in parallel."""
             system_prompt=self.SYSTEM_PROMPT,
             user_message=prompt,
         )
-        self.total_tokens += resp.get("_tokens", 0) if isinstance(resp, dict) else 0
 
         raw_tasks = resp.get("subtasks", [])
         subtasks = []
@@ -195,7 +213,6 @@ Subtasks with the same priority run in parallel."""
 
     async def _execute_subtasks(self, subtasks: list[SubTask]) -> None:
         """Execute subtasks, running same-priority tasks in parallel."""
-        # Group by priority (stored in context or default to 1)
         groups: dict[int, list[SubTask]] = {}
         for st in subtasks:
             p = st.context.pop("priority", 1) if "priority" in st.context else 1
@@ -218,15 +235,22 @@ Subtasks with the same priority run in parallel."""
                         st.context["previous_results"] = completed_results
 
     async def _run_subagent(self, subtask: SubTask) -> SubTask:
-        """Spawn the appropriate subagent and run the task."""
+        """Spawn the appropriate subagent with the best LLM for its role."""
         agent_cls = AGENT_REGISTRY.get(subtask.role)
         if not agent_cls:
             subtask.status = TaskStatus.failed
             subtask.error = f"Unknown role: {subtask.role}"
             return subtask
 
-        agent = agent_cls(llm=self.llm)
-        self._log("spawn", f"Spawning {agent.name} for: {subtask.instruction[:80]}")
+        # Route to best LLM for this subagent's role
+        llm = self.router.route(role=subtask.role, instruction=subtask.instruction)
+        self._providers_to_close.append(llm)
+
+        agent = agent_cls(llm=llm)
+        self._log(
+            "spawn",
+            f"Spawning {agent.name} [{llm.provider_name}/{llm.config.model}]: {subtask.instruction[:60]}"
+        )
 
         result = await agent.run(subtask)
 
@@ -274,6 +298,16 @@ Synthesize all results into a final, coherent deliverable. Return JSON:
             user_message=prompt,
         )
         return resp
+
+    # ── Cleanup ───────────────────────────────────────────
+
+    async def _cleanup(self):
+        """Close all LLM provider HTTP clients."""
+        for provider in self._providers_to_close:
+            try:
+                await provider.close()
+            except Exception:
+                pass
 
     # ── Logging ───────────────────────────────────────────
 

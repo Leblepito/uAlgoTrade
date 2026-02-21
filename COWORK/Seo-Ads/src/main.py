@@ -76,13 +76,17 @@ async def verify_api_key(api_key: str | None = Security(api_key_header)) -> str 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup / shutdown hooks."""
-    llm_provider = os.getenv("LLM_PROVIDER", "openai")
-    llm_key_set = bool(os.getenv("OPENAI_API_KEY") or os.getenv("ANTHROPIC_API_KEY"))
+    gemini_ok = bool(os.getenv("GEMINI_API_KEY"))
+    claude_ok = bool(os.getenv("ANTHROPIC_API_KEY"))
     print(f"Seo-Ads starting on port {PORT}")
     print(f"CORS origins: {CORS_ORIGINS}")
     print(f"API key auth: {'enabled' if API_KEYS else 'disabled (dev mode)'}")
     print(f"Rate limit: {RATE_LIMIT_RPM} req/min")
-    print(f"AI Agent: LLM={llm_provider}, API key={'configured' if llm_key_set else 'NOT SET'}")
+    print(f"AI Agent LLM Router:")
+    print(f"  Gemini: {'configured' if gemini_ok else 'NOT SET'} (primary — content, SEO, hashtags)")
+    print(f"  Claude: {'configured' if claude_ok else 'NOT SET'} (secondary — orchestration, cultural)")
+    if not gemini_ok and not claude_ok:
+        print(f"  WARNING: No LLM keys configured! /agent endpoints will fail.")
     yield
     print("Seo-Ads shutting down")
 
