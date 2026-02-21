@@ -7,7 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from src.config import settings
 from src.db.session import engine
 from src.models.base import Base
-from src.routers import auth, spaces, bookings, stripe_billing
+import src.models.blog_post  # noqa: F401 — register BlogPost table
+from src.routers import auth, spaces, bookings, stripe_billing, blog
 
 
 @asynccontextmanager
@@ -37,6 +38,7 @@ app.include_router(auth.router)
 app.include_router(spaces.router)
 app.include_router(bookings.router)
 app.include_router(stripe_billing.router)
+app.include_router(blog.router)
 
 
 @app.get("/health", tags=["system"])
