@@ -81,6 +81,12 @@ async def list_roles():
                 "best_for": "Full campaign planning with phases, KPIs, content calendar",
                 "default_llm": "Gemini Pro",
             },
+            {
+                "role": "blog_writer",
+                "description": "Writes full-length SEO blog posts for any project",
+                "best_for": "Long-form blog content for Cowork, U2Algo, Seo-Ads, or general tech",
+                "default_llm": "Gemini Pro",
+            },
         ]
     }
 

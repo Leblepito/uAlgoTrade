@@ -18,6 +18,7 @@ from fastapi.responses import JSONResponse
 
 from src.api.endpoints import content
 from src.api.endpoints import agent
+from src.api.endpoints import blog
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -155,6 +156,9 @@ async def root():
             "agent_run": "POST /agent/run",
             "agent_campaign": "POST /agent/campaign",
             "agent_roles": "GET /agent/roles",
+            "blog_generate": "POST /blog/generate",
+            "blog_bulk": "POST /blog/bulk",
+            "blog_projects": "GET /blog/projects",
         },
         "integration": {
             "auth": "Set X-API-Key header (optional in dev mode)",
@@ -276,6 +280,7 @@ async def delete_webhook(hook_id: str):
 
 app.include_router(content.router, prefix="/content", tags=["content"])
 app.include_router(agent.router, tags=["AI Agent"])
+app.include_router(blog.router, tags=["Blog"])
 
 
 # ---------------------------------------------------------------------------

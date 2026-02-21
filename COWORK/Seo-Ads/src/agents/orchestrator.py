@@ -25,6 +25,7 @@ from .models import (
     TaskStatus,
 )
 from .subagents import (
+    BlogWriterAgent,
     CampaignPlannerAgent,
     ContentWriterAgent,
     CulturalAdapterAgent,
@@ -41,6 +42,7 @@ AGENT_REGISTRY: dict[AgentRole, type[BaseAgent]] = {
     AgentRole.cultural_adapter: CulturalAdapterAgent,
     AgentRole.hashtag_researcher: HashtagResearcherAgent,
     AgentRole.campaign_planner: CampaignPlannerAgent,
+    AgentRole.blog_writer: BlogWriterAgent,
 }
 
 # Platform specs for subagent context
@@ -72,6 +74,7 @@ Available subagents:
 - cultural_adapter: Adapts content for cultural fit in target regions
 - hashtag_researcher: Finds optimal hashtags for engagement
 - campaign_planner: Designs multi-platform campaign strategies
+- blog_writer: Writes full-length SEO blog posts for any project (cowork, ualgo, seo_ads)
 
 Rules:
 1. Break the goal into the minimum necessary subtasks

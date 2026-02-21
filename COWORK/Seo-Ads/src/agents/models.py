@@ -24,6 +24,7 @@ class AgentRole(str, Enum):
     cultural_adapter = "cultural_adapter"
     hashtag_researcher = "hashtag_researcher"
     campaign_planner = "campaign_planner"
+    blog_writer = "blog_writer"
 
 
 # ── Requests ──────────────────────────────────────────────

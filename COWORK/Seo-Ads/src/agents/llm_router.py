@@ -36,6 +36,7 @@ _GEMINI_PREFERRED_ROLES: set[AgentRole] = {
     AgentRole.seo_optimizer,        # SEO analysis
     AgentRole.hashtag_researcher,   # Hashtag research
     AgentRole.campaign_planner,     # Campaign strategy
+    AgentRole.blog_writer,          # Long-form blog posts
 }
 
 # Context signals that push toward Claude regardless of role
@@ -135,9 +136,11 @@ class LLMRouter:
             return "anthropic", self._claude_model, f"role {role.value} prefers Claude"
 
         # 4. Default: Gemini (primary, cost-effective, Google ecosystem)
-        # Use Gemini Pro for campaign planning (more complex), Flash for everything else
+        # Use Gemini Pro for complex tasks (campaign planning, blog writing), Flash for rest
         if role == AgentRole.campaign_planner:
             return "gemini", self._gemini_pro_model, "campaign planning → Gemini Pro"
+        if role == AgentRole.blog_writer:
+            return "gemini", self._gemini_pro_model, "blog writing → Gemini Pro"
 
         return "gemini", self._gemini_model, "default → Gemini Flash"
 
