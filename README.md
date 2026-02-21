@@ -1,4 +1,4 @@
-# uKeyTr (uKeyTr) — AI-Powered Trading Platform
+# uAlgoTrade (uAlgoTrade) — AI-Powered Trading Platform
 
 A polyglot monorepo combining a .NET trading backend, Next.js frontend, and Python AI agent swarm for algorithmic cryptocurrency trading.
 
@@ -33,7 +33,7 @@ Browser → Next.js Frontend (ualgotrade.com)
 
 ```bash
 # 1. Clone
-git clone https://github.com/Leblepito/uKeyTr.git
+git clone https://github.com/Leblepito/uAlgoTrade.git
 cd uKeyTr
 
 # 2. Environment
