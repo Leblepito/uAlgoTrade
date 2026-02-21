@@ -34,7 +34,7 @@ Browser → Next.js Frontend (ualgotrade.com)
 ```bash
 # 1. Clone
 git clone https://github.com/Leblepito/uAlgoTrade.git
-cd uKeyTr
+cd uAlgoTrade
 
 # 2. Environment
 cp .env.example .env
@@ -50,7 +50,7 @@ docker compose up
 ## Project Structure
 
 ```
-uKeyTr/
+uAlgoTrade/
 ├── backend/          → .NET 9.0 Clean Architecture API
 ├── frontend/         → Next.js 16 Trading Dashboard
 ├── ai-engine/        → Python AI Agent Swarm (FastAPI)
