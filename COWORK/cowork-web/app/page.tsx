@@ -24,6 +24,7 @@ export default function HomePage() {
           <div className="flex items-center gap-4">
             <Link href="/spaces" className="text-sm text-gray-600 hover:text-gray-900">Spaces</Link>
             <Link href="/pricing" className="text-sm text-gray-600 hover:text-gray-900">Pricing</Link>
+            <Link href="/blog" className="text-sm text-gray-600 hover:text-gray-900">Blog</Link>
             <Link href="/auth/login" className="btn-secondary text-sm py-2">Log in</Link>
             <Link href="/auth/register" className="btn-primary text-sm py-2">Get started</Link>
           </div>

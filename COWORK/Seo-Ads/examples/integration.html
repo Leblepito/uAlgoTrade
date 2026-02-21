@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seo-Ads Integration Example</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #0a0a0a; color: #e2e8f0; }
+    h1 { color: #22d3ee; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; margin: 16px 0; border: 1px solid #334155; }
+    .card h3 { color: #22d3ee; margin-top: 0; }
+    pre { background: #0f172a; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+    button { background: #22d3ee; color: #0a0a0a; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; margin: 4px; }
+    button:hover { background: #06b6d4; }
+    select { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 8px; border-radius: 6px; }
+    #output { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Seo-Ads Integration Demo</h1>
+  <p>This page demonstrates how to integrate the Seo-Ads API into any website.</p>
+
+  <div class="card">
+    <h3>1. Configure</h3>
+    <label>API URL: </label>
+    <input id="apiUrl" value="http://localhost:8080" style="background:#0f172a;color:#e2e8f0;border:1px solid #334155;padding:8px;border-radius:6px;width:300px">
+    <br><br>
+    <label>API Key: </label>
+    <input id="apiKey" placeholder="optional" style="background:#0f172a;color:#e2e8f0;border:1px solid #334155;padding:8px;border-radius:6px;width:300px">
+  </div>
+
+  <div class="card">
+    <h3>2. Generate Content</h3>
+    <label>Region: </label>
+    <select id="region">
+      <option value="en">English</option>
+      <option value="tr">Turkce</option>
+      <option value="th">Thai</option>
+      <option value="ar">Arabic</option>
+      <option value="ru">Russian</option>
+      <option value="zh">Chinese</option>
+    </select>
+
+    <label>Platform: </label>
+    <select id="platform">
+      <option value="meta_ig">Instagram</option>
+      <option value="meta_fb">Facebook</option>
+      <option value="x_twitter">X (Twitter)</option>
+      <option value="google_ads">Google Ads</option>
+      <option value="youtube">YouTube</option>
+      <option value="seo_blog">SEO Blog</option>
+    </select>
+
+    <label>Topic: </label>
+    <select id="topic">
+      <option value="crypto_trading">Crypto Trading</option>
+      <option value="market_update">Market Update</option>
+      <option value="product_promo">Product Promo</option>
+      <option value="educational">Educational</option>
+    </select>
+    <br><br>
+    <button onclick="generateSingle()">Generate Single</button>
+    <button onclick="generateBulk()">Generate Bulk (All Regions)</button>
+    <button onclick="listRegions()">List Regions</button>
+    <button onclick="listPlatforms()">List Platforms</button>
+  </div>
+
+  <div class="card">
+    <h3>3. Output</h3>
+    <pre id="output">Click a button above to see results...</pre>
+  </div>
+
+  <div class="card">
+    <h3>Integration Code Snippets</h3>
+    <h4>JavaScript (fetch)</h4>
+    <pre>
+const resp = await fetch('https://your-seo-ads.railway.app/content/generate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-API-Key': 'your-api-key'
+  },
+  body: JSON.stringify({
+    region: 'tr',
+    platform: 'meta_ig',
+    topic: 'crypto_trading',
+    symbol: 'BTCUSDT'
+  })
+});
+const data = await resp.json();
+console.log(data.pieces[0].headline);
+    </pre>
+
+    <h4>Python (httpx)</h4>
+    <pre>
+import httpx
+
+resp = httpx.post(
+    "https://your-seo-ads.railway.app/content/generate",
+    headers={"X-API-Key": "your-api-key"},
+    json={"region": "tr", "platform": "meta_ig", "topic": "crypto_trading"}
+)
+data = resp.json()
+print(data["pieces"][0]["headline"])
+    </pre>
+
+    <h4>cURL</h4>
+    <pre>
+curl -X POST https://your-seo-ads.railway.app/content/generate \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: your-api-key" \
+  -d '{"region":"tr","platform":"meta_ig","topic":"crypto_trading","symbol":"BTCUSDT"}'
+    </pre>
+
+    <h4>React / Next.js</h4>
+    <pre>
+const [content, setContent] = useState(null);
+
+async function generateContent(region, platform) {
+  const res = await fetch('/api/seo-ads', {
+    method: 'POST',
+    body: JSON.stringify({ region, platform, topic: 'crypto_trading' })
+  });
+  setContent(await res.json());
+}
+    </pre>
+  </div>
+
+  <script>
+    function getConfig() {
+      return {
+        url: document.getElementById('apiUrl').value,
+        key: document.getElementById('apiKey').value
+      };
+    }
+
+    function headers() {
+      const h = { 'Content-Type': 'application/json' };
+      const key = getConfig().key;
+      if (key) h['X-API-Key'] = key;
+      return h;
+    }
+
+    function show(data) {
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function generateSingle() {
+      const cfg = getConfig();
+      const res = await fetch(cfg.url + '/content/generate', {
+        method: 'POST',
+        headers: headers(),
+        body: JSON.stringify({
+          region: document.getElementById('region').value,
+          platform: document.getElementById('platform').value,
+          topic: document.getElementById('topic').value,
+          symbol: 'BTCUSDT'
+        })
+      });
+      show(await res.json());
+    }
+
+    async function generateBulk() {
+      const cfg = getConfig();
+      const res = await fetch(cfg.url + '/content/bulk', {
+        method: 'POST',
+        headers: headers(),
+        body: JSON.stringify({
+          regions: ['en', 'tr', 'th', 'ar', 'ru', 'zh'],
+          platforms: [document.getElementById('platform').value],
+          topic: document.getElementById('topic').value
+        })
+      });
+      show(await res.json());
+    }
+
+    async function listRegions() {
+      const cfg = getConfig();
+      const res = await fetch(cfg.url + '/content/regions', { headers: headers() });
+      show(await res.json());
+    }
+
+    async function listPlatforms() {
+      const cfg = getConfig();
+      const res = await fetch(cfg.url + '/content/platforms', { headers: headers() });
+      show(await res.json());
+    }
+  </script>
+</body>
+</html>
