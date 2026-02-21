@@ -50,5 +50,14 @@ services:
     environment:
       COWORK_API_URL: http://cowork-api:8080
 
+  seo-ads:
+    build: ./Seo-Ads
+    ports: ["8082:8082"]
+    environment:
+      PORT: 8082
+      CORS_ORIGINS: "*"
+      SEO_ADS_API_KEYS: ${SEO_ADS_API_KEYS:-}
+      RATE_LIMIT_RPM: 120
+
 volumes:
   pgdata:

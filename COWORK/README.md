@@ -10,6 +10,7 @@ COWORK/
 ├── cowork-web/        Next.js 14 member portal (booking, dashboard)
 ├── cowork-admin/      Next.js 14 admin dashboard (analytics, management)
 ├── cowork-ai/         AI scheduling & occupancy prediction service
+├── Seo-Ads/           AI-powered social media content generation API
 └── docker-compose.yml Full local stack
 ```
 
@@ -21,6 +22,7 @@ COWORK/
 | cowork-web | 3000 | Member portal — booking & dashboard |
 | cowork-admin | 3001 | Admin panel — analytics & management |
 | cowork-ai | 8081 | AI recommendations & occupancy forecast |
+| Seo-Ads | 8082 | AI-powered social media content generation |
 
 ## Quick Start (Docker)
 
@@ -34,13 +36,14 @@ Then open:
 - Admin panel: http://localhost:3001
 - API docs: http://localhost:8080/docs
 - AI service: http://localhost:8081/docs
+- Seo-Ads API: http://localhost:8082/docs
 
 ## Deploy to Railway (separate repos)
 
 Each service is self-contained and ready to deploy as its own Railway service.
 
 1. Create a Railway project
-2. Add a service for each folder (cowork-api, cowork-web, cowork-admin, cowork-ai)
+2. Add a service for each folder (cowork-api, cowork-web, cowork-admin, cowork-ai, Seo-Ads)
 3. Set environment variables from each service's `.env.example`
 4. Add a PostgreSQL plugin and wire `DATABASE_URL` to cowork-api
 
